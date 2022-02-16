@@ -10,17 +10,22 @@ import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        if #available(iOS 15, *) {
-            let appearance = UINavigationBarAppearance()
-            appearance.configureWithOpaqueBackground()
-            UINavigationBar.appearance().standardAppearance = appearance
-            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+//
+        if #available(iOS 15.0, *) {
+                let navBarAppearance = UINavigationBarAppearance()
+                navBarAppearance.configureWithOpaqueBackground()
+                UINavigationBar.appearance().standardAppearance = navBarAppearance
+                UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+                UINavigationBar.appearance().backgroundColor = .white
+                UINavigationBar.appearance().barTintColor = .white
+                UINavigationBar.appearance().isTranslucent = false
+                UINavigationBar.appearance().clipsToBounds = false
+                UINavigationBar.appearance().backgroundColor = .white
         }
+        
         return true
     }
 

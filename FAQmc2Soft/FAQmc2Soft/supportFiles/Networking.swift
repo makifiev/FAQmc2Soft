@@ -35,8 +35,8 @@ class Networking
             }
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
-                let report = DataModel()
-                report.items = json as AnyObject
+                let report = DataModel()  
+                report.items = json as? [[String:Any]] ?? [[:]]
                 success(report)
                 
             } catch {
@@ -48,12 +48,4 @@ class Networking
         
     }
 }
-
-struct Colour: Codable {
-    let name: String
-    let question: String
-    let answer: String
-    //    func getString() {
-    //        print( "Name: \(name), Id: \(id)" )
-    //    }
-}
+ 

@@ -35,3 +35,19 @@ public extension ActivityIndicatorPresenter where Self: UIViewController {
         }
     }
 }
+
+extension UISearchBar
+{
+    func setSearchBarWithFrame(searchBar: UISearchBar,frame: CGRect, textColor: UIColor, placeHolder: String) -> UISearchBar
+    {
+        searchBar.frame = frame
+        searchBar.searchBarStyle = .minimal
+        searchBar.autocorrectionType = .no
+        searchBar.enablesReturnKeyAutomatically = true
+        searchBar.returnKeyType = .done
+        searchBar.placeholder = placeHolder
+        
+        return searchBar
+    }
+}
+
